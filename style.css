@@ -1,0 +1,78 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	background-color: #222831;
+	color: #00adb5;
+}
+
+.root-container {
+	margin: 20px;
+	text-align: center;
+}
+
+img {
+	width: 300px;
+	height: 300px;
+}
+
+.image-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.flip-card {
+	width: 300px;
+	height: 300px;
+	margin: 30px;
+	perspective: 1000px;
+}
+
+.flip-card-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	transition: transform 0.5s;
+	transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+	transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+}
+
+.flip-card-back {
+	background-color: #222831;
+	color: #ea1752cf;
+	transform: rotateY(180deg);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.flip-card-back h3,
+.flip-card-back h1 {
+	margin-top: 30px;
+}
+
+#border-title {
+	margin-top: 20px;
+}
+
+#border {
+	margin-top: 10px;
+}
